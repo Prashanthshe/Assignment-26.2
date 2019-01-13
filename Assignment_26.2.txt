@@ -1,0 +1,20 @@
+Assignent 26.2
+
+4. Return the first name, last name and city of all customers who live in Canada.                                                         Order the results first by the last then by the first name.
+
+Answer: select name,city from customer_list
+        where country = 'canada';
+ 
+5. How many customers are from Brazil??
+
+Answer: select count(*) from customer_list
+        where country = 'Brazil'  
+
+6. Return the "popular countries"? (that is, the ones with more than 20 customer). For each
+such country, return its name and its correspond number of customers. Order the result by the
+number of customers (descending). 
+
+Answer: select country, count(country) from customer_list
+        group by country
+        having count(country)>20
+        order by count(country) desc;
